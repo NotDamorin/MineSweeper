@@ -10,6 +10,7 @@ public interface GridSquare {
 
 	/**
 	 * Places a mine on an implementation of a {@link GridSquare}.
+	 * @return 
 	 */
 	void placeMine();
 

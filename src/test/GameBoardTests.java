@@ -34,7 +34,6 @@ public class GameBoardTests {
 	@Test
 	public final void createBoardTest() {
 
-		gameBoard = new GameBoard();
 		assertNotNull(gameBoard);
 	}
 
@@ -43,9 +42,9 @@ public class GameBoardTests {
 
 		gameBoard = new GameBoard();
 
-		assertEquals(gameBoard.getXSize(), X_SIZE);
-		assertEquals(gameBoard.getYSize(), Y_SIZE);
-		assertEquals(gameBoard.getNoOfMines(), NO_OF_MINES);
+		assertEquals(X_SIZE, gameBoard.getXSize());
+		assertEquals(Y_SIZE, gameBoard.getYSize());
+		assertEquals(NO_OF_MINES, gameBoard.getNoOfMines());
 
 	}
 
@@ -57,19 +56,17 @@ public class GameBoardTests {
 		gameBoard.setYSize(USER_Y_SIZE);
 		gameBoard.setNoOfMines(USER_NO_OF_MINES);
 
-		assertEquals(gameBoard.getXSize(), USER_X_SIZE);
-		assertEquals(gameBoard.getYSize(), USER_Y_SIZE);
-		assertEquals(gameBoard.getNoOfMines(), USER_NO_OF_MINES);
+		assertEquals(USER_X_SIZE, gameBoard.getXSize());
+		assertEquals(USER_Y_SIZE, gameBoard.getYSize());
+		assertEquals(USER_NO_OF_MINES, gameBoard.getNoOfMines());
 	}
 
 	@Test
-	public final void placeMineTest() {
+	public final void placeAllMinesTest() {
 
-		GridSquare gridSquare = mock(GridSquare.class);
-		gridSquare.placeMine();
-		when(gridSquare.hasMine()).thenReturn(true);
-		
-		assertTrue(gridSquare.hasMine());
+		gameBoard.placeAllMines();
+
+		assertEquals(NO_OF_MINES, gameBoard.getRemainingMines());
 	}
 
 }

@@ -1,16 +1,36 @@
 package test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import src.GridSquare;
+import src.GridSquareImpl;
 
+/**
+ * A Test suite to ensure that the GridSquare interface is tested fully.
+ * 
+ * @author Damien
+ * 
+ */
 public class GridSquareTests {
 
-	@Test
-	public void test() {
+	private GridSquare gridSquare;
 
-		fail("Not yet implemented");
+	@Before
+	public void setUp() {
+
+		gridSquare = new GridSquareImpl();
 	}
 
+	@Test
+	public void placeMineTest() {
+
+		gridSquare.placeMine();
+		assertTrue(gridSquare.hasMine());
+	}
+	
 }
