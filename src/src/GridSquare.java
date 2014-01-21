@@ -10,7 +10,8 @@ public interface GridSquare {
 
 	/**
 	 * Places a mine on an implementation of a {@link GridSquare}.
-	 * @return 
+	 * 
+	 * @return
 	 */
 	void placeMine();
 
@@ -18,5 +19,20 @@ public interface GridSquare {
 	 * @return True if the {@link GridSquare} has a mine, false otherwise
 	 */
 	Boolean hasMine();
+	
+	/**
+	 * @return
+	 */
+	Boolean isVisible();
+	
+	/**
+	 * @return
+	 */
+	Boolean hasFlag();
+	
+	/**
+	 * @return The {@link GridLocation} of the {@link GridSquare}.
+	 */
+	GridLocation getLocation();
 
 }

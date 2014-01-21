@@ -23,7 +23,7 @@ public class GridSquareTests {
 	@Before
 	public void setUp() {
 
-		gridSquare = new GridSquareImpl();
+		gridSquare = new GridSquareImpl(0, 0);
 	}
 
 	@Test
@@ -32,5 +32,5 @@ public class GridSquareTests {
 		gridSquare.placeMine();
 		assertTrue(gridSquare.hasMine());
 	}
-	
+
 }
